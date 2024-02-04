@@ -3,15 +3,18 @@ import styled from "styled-components"
 
 const StyledNavbar = styled.ul`
     display: flex;
-    justify-content: space-around;
     background-color: #555;
     margin: 0;
+    padding: 1em;
 
     & li {
-        border: solid 1px white;
+        background: white;
+        padding: .5em;
+        margin-right: .5em;
 
         &:hover {
             cursor: pointer;
+            background: #999;
         }
     }
 `;
