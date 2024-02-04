@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import NavBar from './Navbar';
-import Home from './Home';
-import Favourites from './Favourites';
+import Home from './pages/Home';
+import Favourites from './pages/Favourites';
 
 function App() {
   console.log('App rendered');

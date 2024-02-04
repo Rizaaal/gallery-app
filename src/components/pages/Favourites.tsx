@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction } from 'react';
-import Card from './Card';
+import Card from '../Card';
 
 function Favourites(
   props: {
