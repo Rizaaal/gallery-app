@@ -27,12 +27,13 @@ function App() {
 
   // per ricaricare alla pagina corrente. Copiato da internet!
   useEffect(() => {
+    localStorage.setItem("page", page)
+  }, [page])
+  
+  useEffect(() => {
     setPage(localStorage.getItem("page") as string);
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem("page", page)
-  }, [page])
     
   console.log('App rendered, ', page);
   return (
