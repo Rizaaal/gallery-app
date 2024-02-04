@@ -38,7 +38,7 @@ function Card(props: Card & {page?: string}): JSX.Element {
       <Button onClick={() => {
         setFav(props.id as string);
         setFavourite(!currentFav);
-      }}>{currentFav ? '-' : '+'}</Button>
+      }}>{currentFav ? '➖' : '➕'}</Button>
       : null}
     </StyledCard>
   )
