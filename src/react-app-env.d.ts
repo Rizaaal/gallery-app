@@ -6,3 +6,9 @@ interface TextLabel {
     onClick?: any
 }
 
+interface Card {
+    url: string;
+    title: string;
+    favourite?: boolean
+    id?: string
+}
