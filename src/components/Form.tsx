@@ -8,30 +8,26 @@ const StyledForm = styled.section`
 `
 
 function Form(
-
-props: {
-    cards: {[key: string]: Card}, 
+  props: {
     setCards: Dispatch<SetStateAction<{[key: string]: Card}>>
-}
+  }): JSX.Element {
 
-): JSX.Element {
-    const titleRef: MutableRefObject<HTMLInputElement | null> = 
-    useRef<HTMLInputElement | null>(null);
-    const urlRef: MutableRefObject<HTMLInputElement | null> = 
-    useRef<HTMLInputElement | null>(null);
+  const titleRef: MutableRefObject<HTMLInputElement | null> = 
+  useRef<HTMLInputElement | null>(null);
+  const urlRef: MutableRefObject<HTMLInputElement | null> = 
+  useRef<HTMLInputElement | null>(null);
 
-    return(
-        <StyledForm>
-            <input type="text" ref={titleRef} placeholder="title"/>
-            <input type="text" ref={urlRef} placeholder="url"/>
-            <Button onClick={() => {
-                insertNewCard(urlRef.current?.value, titleRef.current?.value);
-                props.setCards(
-                    JSON.parse(localStorage.getItem("cards") || "{}")
-                );
-            }}>add image</Button>
-        </StyledForm>
-    )
+  return(
+    <StyledForm>
+      <input type="text" ref={titleRef} placeholder="title"/>
+      <input type="text" ref={urlRef} placeholder="url"/>
+      <Button onClick={() => {
+        //teniamo logica storage e view separate
+        insertNewCard(urlRef.current?.value, titleRef.current?.value);
+        props.setCards(JSON.parse(localStorage.getItem("cards") || "{}"));
+      }}>add image</Button>
+    </StyledForm>
+  )
 };
 
 export default Form;
