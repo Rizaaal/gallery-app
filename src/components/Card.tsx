@@ -5,10 +5,25 @@ import Button from "./Button";
 
 const StyledCard = styled.section`
   background-color: #ccc;
-  margin: 1em;
+  max-width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  height: ${({page}) => page == 'favs' ? '350px' : 'revert'};
 
   & img {
     width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+
+  & h2 {
+    width: 100%;
+    margin: 10px 0 0 10px;
+    height: 70px;
+  }
+
+  & button {
+    align-self: flex-end;
   }
 `
 function Card(props: Card & {page?: string}): JSX.Element {
