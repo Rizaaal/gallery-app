@@ -4,9 +4,11 @@ import styled from "styled-components";
 
 // `
 
-function Button({ children, onClick }: TextLabel): JSX.Element {
+function Button(props: ButtonProps): JSX.Element {
     return (
-        <button onClick={onClick}>{children ? children : "Click"}</button>
+        <button onClick={props.onClick}>
+            {props.children ? props.children : "Click"}
+        </button>
     );
 }
 

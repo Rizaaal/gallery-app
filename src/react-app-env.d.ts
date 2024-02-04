@@ -1,9 +1,9 @@
 /// <reference types="react-scripts" />
 //props per il Button component custom che prende un figlio (una stringa)
 
-interface TextLabel {
+interface ButtonProps {
     children?: string
-    onClick?: any
+    onClick?: MouseEventHandler<HTMLButtonElement>
 }
 
 interface Card {
