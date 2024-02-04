@@ -3,7 +3,7 @@ import { setFav } from "../StorageFunctions";
 import styled from "styled-components";
 import Button from "./Button";
 
-const StyledCard = styled.section`
+const StyledCard = styled.section<{ page: string }>`
   background-color: #ccc;
   max-width: 300px;
   display: flex;
@@ -31,7 +31,7 @@ function Card(props: Card & {page?: string}): JSX.Element {
 
   console.log('Card rendered', props.page);
   return(
-    <StyledCard>
+    <StyledCard page={props.page as string}>
       <img src={props.url} alt="immagine inesitente" />
       <h2>{props.title}</h2>
       {props.page == 'home' ? 
