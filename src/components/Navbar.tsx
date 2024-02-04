@@ -20,7 +20,7 @@ function NavBar(
     props: { 
         page: string,
         setPage: Dispatch<SetStateAction<string>>
-        setCards: Dispatch<SetStateAction<{[key: string]: Card}>>
+        setCards: Dispatch<SetStateAction<CardCollection>>
     }): JSX.Element {
 
     return (

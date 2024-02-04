@@ -5,10 +5,10 @@ import Favourites from './pages/Favourites';
 
 function App() {
   console.log('App rendered');
-  const [cards, setCards] = useState<{[key: string]: Card}>(
+  const [page, setPage] = useState<string>('home');
+  const [cards, setCards] = useState<CardCollection>(
     JSON.parse(localStorage.getItem("cards") || "{}")
   );
-  const [page, setPage] = useState<string>('home');
 
   return (
     <>

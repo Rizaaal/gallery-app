@@ -12,3 +12,7 @@ interface Card {
     favourite?: boolean
     id?: string
 }
+
+interface CardCollection {
+    [key: string]: Card;
+}

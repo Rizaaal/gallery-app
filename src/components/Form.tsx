@@ -8,9 +8,8 @@ const StyledForm = styled.section`
 `
 
 function Form(
-  props: {
-    setCards: Dispatch<SetStateAction<{[key: string]: Card}>>
-  }): JSX.Element {
+  props: {setCards: Dispatch<SetStateAction<CardCollection>>
+}): JSX.Element {
 
   const titleRef: MutableRefObject<HTMLInputElement | null> = 
   useRef<HTMLInputElement | null>(null);

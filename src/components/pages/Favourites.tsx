@@ -3,8 +3,8 @@ import Card from '../Card';
 
 function Favourites(
   props: {
-    cards: {[key: string]: Card},
-    setCards: Dispatch<SetStateAction<{[key: string]: Card}>>
+    cards: CardCollection,
+    setCards: Dispatch<SetStateAction<CardCollection>>
   }): JSX.Element {
 
   console.log('Favourites rendered');
