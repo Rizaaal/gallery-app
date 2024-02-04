@@ -32,13 +32,13 @@ function Form(
 
   return(
     <StyledForm>
-      <input type="text" ref={titleRef} placeholder="title"/>
-      <input type="text" ref={urlRef} placeholder="url"/>
+      <input type="text" ref={titleRef} placeholder="Title"/>
+      <input type="text" ref={urlRef} placeholder="Url"/>
       <Button onClick={() => {
         //teniamo logica storage e view separate
         insertNewCard(urlRef.current?.value, titleRef.current?.value);
         props.setCards(JSON.parse(localStorage.getItem("cards") || "{}"));
-      }}>add image</Button>
+      }}>Add Image</Button>
     </StyledForm>
   )
 };
