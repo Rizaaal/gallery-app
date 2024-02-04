@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction } from 'react';
 import Card from '../Card';
+import { Main } from '../App';
 
 function Favourites(
   props: {
@@ -10,16 +11,22 @@ function Favourites(
   console.log('Favourites rendered');
 
   return (
-    <><h1>Favourites</h1>
-    {Object.keys(props.cards).map(id => {
-      if (props.cards[id].favourite) {
-        return (<Card 
-          title={props.cards[id].title} 
-          url={props.cards[id].url}
-          id={id}
-          page={'favs'}
-        />)}
-    })}</>
+    <Main>
+      <h1>Favourites</h1>
+      <section id="cards">
+        {Object.keys(props.cards).map(id => {
+          if (props.cards[id].favourite) {
+            return (
+            <Card 
+              title={props.cards[id].title} 
+              url={props.cards[id].url}
+              id={id}
+              page={'favs'}
+            />
+          )}
+        })}
+      </section>
+    </Main>
   );
 }
 
