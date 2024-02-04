@@ -14,13 +14,13 @@ export function insertNewCard(url?: string, title?: string): void{
 }
 
 export function setFav(id: string): void{
-    const cards = JSON.parse(localStorage.getItem("cards") || "{}");
-    localStorage.setItem("cards", JSON.stringify(
-      {...cards, 
-        [id]: {
-          ...cards[id],
-          favourite: !cards[id].favourite
-        }
+  const cards = JSON.parse(localStorage.getItem("cards") || "{}");
+  localStorage.setItem("cards", JSON.stringify(
+    {...cards, 
+      [id]: {
+        ...cards[id],
+        favourite: !cards[id].favourite
       }
-    ));
-  };
+    }
+  ));
+};
