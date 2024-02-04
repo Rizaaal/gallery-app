@@ -1,4 +1,7 @@
 import { useState } from 'react';
+import NavBar from './Navbar';
+import Home from './Home';
+import Favourites from './Favourites';
 
 function App() {
   console.log('App rendered');
@@ -8,7 +11,11 @@ function App() {
   const [page, setPage] = useState<string>('home');
 
   return (
-    <h1>Galleria</h1>
+    <>
+      <NavBar setPage={ setPage } page={ page } setCards={setCards}/>
+      { page == 'home' && <Home cards={cards} page={page} setCards={setCards} /> }
+      { page == 'favourites' && <Favourites cards={cards} page={page} setCards={setCards}/> }
+    </>
   );
 }
 
