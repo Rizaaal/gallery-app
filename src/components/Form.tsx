@@ -4,7 +4,21 @@ import styled from "styled-components";
 import Button from "./Button";
 
 const StyledForm = styled.section`
-    border: solid 1px white;
+    display: flex;
+    flex-grow: 1;
+    padding: 16px 0;
+    margin-left: 1em;
+
+    & * {
+      align-self: center;
+      margin-right: 8px;
+      height: 30px;
+      border: solid 1px;
+    }
+
+    & input {
+      padding-left: 8px;
+    }
 `
 
 function Form(
