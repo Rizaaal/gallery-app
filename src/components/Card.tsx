@@ -1,18 +1,7 @@
+import { useState } from "react";
+import { setFav } from "../StorageFunctions";
 import styled from "styled-components";
 import Button from "./Button";
-import { useState } from "react";
-
-function setFav(id: string): void{
-  const cards = JSON.parse(localStorage.getItem("cards") || "{}");
-  localStorage.setItem("cards", JSON.stringify(
-    {...cards, 
-      [id]: {
-        ...cards[id],
-        favourite: !cards[id].favourite
-      }
-    }
-  ));
-};
 
 const StyledCard = styled.section`
   background-color: #ccc;

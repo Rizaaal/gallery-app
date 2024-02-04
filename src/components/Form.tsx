@@ -1,20 +1,7 @@
+import { Dispatch, MutableRefObject, SetStateAction, useRef } from "react";
+import { insertNewCard } from "../StorageFunctions";
 import styled from "styled-components";
 import Button from "./Button";
-import { Dispatch, MutableRefObject, SetStateAction, useRef } from "react";
-
-function insertNewCard(url?: string, title?: string): void{
-    const oldCards = JSON.parse(localStorage.getItem("cards") || "{}");
-    let id = 1;
-    for (let post in oldCards){id++;}
-    localStorage.setItem("cards", JSON.stringify({
-        ...oldCards, 
-        [`post${id}`]: {
-            url: url,
-            title: title,
-            favourite: false
-        }
-    }));
-}
 
 const StyledForm = styled.section`
     border: solid 1px white;
