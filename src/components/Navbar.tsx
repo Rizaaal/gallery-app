@@ -30,7 +30,7 @@ function NavBar(
                 props.setCards(JSON.parse(localStorage.getItem("cards") || "{}"));
             }}>Home</li>
             <li onClick={() => {
-                props.setPage('favourites');
+                props.setPage('favs');
                 props.setCards(JSON.parse(localStorage.getItem("cards") || "{}"));
             }}>Preferiti</li>
         </StyledNavbar>

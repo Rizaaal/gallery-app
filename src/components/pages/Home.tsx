@@ -5,7 +5,6 @@ import Card from '../Card';
 function Home(
     props: {
         cards: {[key: string]: Card}, 
-        page: string
         setCards: Dispatch<SetStateAction<{[key: string]: Card}>>
     }): JSX.Element {
 
@@ -23,7 +22,7 @@ function Home(
             url={props.cards[id].url}
             id={id}
             favourite={props.cards[id].favourite}
-            page={props.page}
+            page={'home'}
           />
 
         ))

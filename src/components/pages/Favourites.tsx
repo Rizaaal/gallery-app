@@ -4,7 +4,6 @@ import Card from '../Card';
 function Favourites(
   props: {
     cards: {[key: string]: Card},
-    page: string,
     setCards: Dispatch<SetStateAction<{[key: string]: Card}>>
   }): JSX.Element {
 
@@ -18,7 +17,7 @@ function Favourites(
           title={props.cards[id].title} 
           url={props.cards[id].url}
           id={id}
-          page={props.page}
+          page={'favs'}
         />)}
     })}</>
   );

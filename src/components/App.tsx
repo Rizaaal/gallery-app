@@ -13,8 +13,8 @@ function App() {
   return (
     <>
       <NavBar setPage={ setPage } page={ page } setCards={setCards}/>
-      { page == 'home' && <Home cards={cards} page={page} setCards={setCards} /> }
-      { page == 'favourites' && <Favourites cards={cards} page={page} setCards={setCards}/> }
+      { page == 'home' && <Home cards={cards} setCards={setCards} /> }
+      { page == 'favs' && <Favourites cards={cards} setCards={setCards}/> }
     </>
   );
 }
