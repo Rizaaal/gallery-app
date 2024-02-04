@@ -4,8 +4,8 @@ import Card from '../Card';
 
 function Home(
   props: {
-    cards: {[key: string]: Card}, 
-    setCards: Dispatch<SetStateAction<{[key: string]: Card}>>
+    cards: CardCollection,
+    setCards: Dispatch<SetStateAction<CardCollection>>
   }): JSX.Element {
 
   console.log('Home rendered');
