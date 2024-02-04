@@ -6,13 +6,16 @@ import styled from 'styled-components';
 
 export const Main = styled.main`
   & h1 {
-    flex-grow: 2;
+    font-size: 3em;
+    margin-left: 1em
   }
 
   & #cards {
-    border: solid 1px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+    padding: 10px;
   }
 `
 
