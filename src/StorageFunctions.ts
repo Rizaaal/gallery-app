@@ -1,15 +1,16 @@
 export function insertNewCard(url?: string, title?: string): void{
-    const oldCards = JSON.parse(localStorage.getItem("cards") || "{}");
-    let id = 1;
-    for (let post in oldCards){id++;}
-    localStorage.setItem("cards", JSON.stringify({
-        ...oldCards, 
-        [`post${id}`]: {
-            url: url,
-            title: title,
-            favourite: false
-        }
-    }));
+  const oldCards = JSON.parse(localStorage.getItem("cards") || "{}");
+  let id = 1;
+  //get last id
+  Object.keys(oldCards).forEach(() => id++);
+  localStorage.setItem("cards", JSON.stringify({
+    ...oldCards, 
+    [`post${id}`]: {
+      url: url,
+      title: title,
+      favourite: false
+    }
+  }));
 }
 
 export function setFav(id: string): void{
