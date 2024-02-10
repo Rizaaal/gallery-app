@@ -1,4 +1,5 @@
-import { Dispatch, SetStateAction } from "react";
+import { Dispatch, SetStateAction, useContext } from "react";
+import { CardContext } from "../contexts/cardContext";
 import styled from "styled-components"
 
 const StyledNavbar = styled.ul`
@@ -23,18 +24,20 @@ function NavBar(
     props: { 
         page: string,
         setPage: Dispatch<SetStateAction<string>>
-        setCards: Dispatch<SetStateAction<CardCollection>>
     }): JSX.Element {
+
+    console.log('NavBar rendered');
+    const { setCards } = useContext(CardContext);
 
     return (
         <StyledNavbar>
             <li onClick={() => {
                 props.setPage('home');
-                props.setCards(JSON.parse(localStorage.getItem("cards") || "{}"));
+                setCards(JSON.parse(localStorage.getItem("cards") || "{}"));
             }}>Home</li>
             <li onClick={() => {
                 props.setPage('favs');
-                props.setCards(JSON.parse(localStorage.getItem("cards") || "{}"));
+                setCards(JSON.parse(localStorage.getItem("cards") || "{}"));
             }}>Preferiti</li>
         </StyledNavbar>
     );

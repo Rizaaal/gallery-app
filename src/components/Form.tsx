@@ -1,7 +1,8 @@
-import { Dispatch, MutableRefObject, SetStateAction, useRef } from "react";
+import { Dispatch, MutableRefObject, SetStateAction, useContext, useRef } from "react";
 import { insertNewCard } from "../StorageFunctions";
 import styled from "styled-components";
 import Button from "./Button";
+import { CardContext } from "../contexts/cardContext";
 
 const StyledForm = styled.section`
     display: flex;
@@ -21,10 +22,8 @@ const StyledForm = styled.section`
     }
 `
 
-function Form(
-  props: {setCards: Dispatch<SetStateAction<CardCollection>>
-}): JSX.Element {
-
+function Form(): JSX.Element {
+  const { setCards } = useContext(CardContext);
   const titleRef: MutableRefObject<HTMLInputElement | null> = 
   useRef<HTMLInputElement | null>(null);
   const urlRef: MutableRefObject<HTMLInputElement | null> = 
@@ -37,7 +36,7 @@ function Form(
       <Button onClick={() => {
         //teniamo logica storage e view separate
         insertNewCard(urlRef.current?.value, titleRef.current?.value);
-        props.setCards(JSON.parse(localStorage.getItem("cards") || "{}"));
+        setCards(JSON.parse(localStorage.getItem("cards") || "{}"));
       }}>Add Image</Button>
     </StyledForm>
   )

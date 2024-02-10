@@ -3,6 +3,7 @@ import NavBar from './Navbar';
 import Home from './pages/Home';
 import Favourites from './pages/Favourites';
 import styled from 'styled-components';
+import { CardContext, CardProvider } from '../contexts/cardContext';
 
 export const Main = styled.main`
   & h1 {
@@ -21,9 +22,6 @@ export const Main = styled.main`
 
 function App() {
   const [page, setPage] = useState<string>('home');
-  const [cards, setCards] = useState<CardCollection>(
-    JSON.parse(localStorage.getItem("cards") || "{}")
-  );
 
   // per ricaricare alla pagina corrente. Copiato da internet!
   useEffect(() => {
@@ -37,11 +35,14 @@ function App() {
     
   console.log('App rendered, ', page);
   return (
-    <Main>
-      <NavBar setPage={ setPage } page={ page } setCards={setCards}/>
-      { page == 'home' && <Home cards={cards} setCards={setCards} /> }
-      { page == 'favs' && <Favourites cards={cards}/> }
-    </Main>
+    <CardProvider>
+      <Main>
+        <NavBar setPage={ setPage } page={ page }/>
+        { page == 'home' && <Home /> }
+        {/* { page == 'favs' && <Favourites /> } */}
+      </Main>
+    </CardProvider>
+    
   );
 }
 
