@@ -1,11 +1,9 @@
-import { Dispatch, SetStateAction } from 'react';
 import Card from '../Card';
 import { Main } from '../App';
 
 function Favourites(
   props: {
-    cards: CardCollection,
-    setCards: Dispatch<SetStateAction<CardCollection>>
+    cards: CardCollection
   }): JSX.Element {
 
   console.log('Favourites rendered');
