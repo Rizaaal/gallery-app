@@ -21,10 +21,8 @@ const StyledNavbar = styled.ul`
 `;
 
 function NavBar(
-    props: { 
-        page: string,
-        setPage: Dispatch<SetStateAction<string>>
-    }): JSX.Element {
+    props: { setPage: Dispatch<SetStateAction<string>> }
+): JSX.Element {
 
     console.log('NavBar rendered');
     const { setCards } = useContext(CardContext);

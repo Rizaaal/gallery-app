@@ -11,6 +11,7 @@ export const CardContext = createContext<Props>({
 });
 
 export function CardProvider ({ children }: {children: JSX.Element}){
+  console.log('CardProvider');
   const [cards, setCards] = useState<CardCollection>(
     JSON.parse(localStorage.getItem("cards") || "{}")
   );

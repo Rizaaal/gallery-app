@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
+import { CardProvider } from '../contexts/cardContext';
 import NavBar from './Navbar';
 import Home from './pages/Home';
 import Favourites from './pages/Favourites';
 import styled from 'styled-components';
-import { CardContext, CardProvider } from '../contexts/cardContext';
 
 export const Main = styled.main`
   & h1 {
@@ -33,16 +33,15 @@ function App() {
   }, []);
 
     
-  console.log('App rendered, ', page);
+  console.log('App rendered');
   return (
     <CardProvider>
       <Main>
-        <NavBar setPage={ setPage } page={ page }/>
+        <NavBar setPage={setPage}/>
         { page == 'home' && <Home /> }
-        {/* { page == 'favs' && <Favourites /> } */}
+        { page == 'favs' && <Favourites /> }
       </Main>
     </CardProvider>
-    
   );
 }
 
